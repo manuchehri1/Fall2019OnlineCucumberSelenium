@@ -22,7 +22,16 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M3</version>
                 <configuration>
+                    <!-- just to run 2 runner class at the same time  -->
+                    <parallel>classes</parallel>
+                    <threadCount>2</threadCount>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <forkCount>2C</forkCount>
+
+                    <!--   -->
+
                     <includes>
+                        <!-- list name of runner classes to run   -->
                         <include>**/*Runner.java</include>
                     </includes>
                     <rerunFailingTestsCount>1</rerunFailingTestsCount>

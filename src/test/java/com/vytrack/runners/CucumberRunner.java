@@ -29,11 +29,11 @@ import org.junit.runner.RunWith;
         glue = "com/vytrack/step_definitions",
         features = "src/test/resources/features",
         dryRun = false,
-        strict = false,
-        tags = "@create_calendar_events",
+        strict = true,
+        tags = "@create_car",
         plugin = {
                 "html:target/default-html-report",
-                 "json:target/cucumber.json"
+                 "json:target/cucumber1.json"
 
         }
 )

@@ -28,3 +28,5 @@ Feature: Login
   Scenario: Login with parameters
     When user enters "salesmanager115" username and "UserUser123" password
     Then user should verify that title is a Dashboard
+
+
