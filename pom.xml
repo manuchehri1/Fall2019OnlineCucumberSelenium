@@ -24,11 +24,9 @@
                 <configuration>
                     <!-- just to run 2 runner class at the same time  -->
                     <parallel>classes</parallel>
-                    <threadCount>2</threadCount>
+                    <threadCount>4</threadCount>
                     <perCoreThreadCount>false</perCoreThreadCount>
-                    <forkCount>2C</forkCount>
-
-                    <!--   -->
+                    <forkCount>4C</forkCount>
 
                     <includes>
                         <!-- list name of runner classes to run   -->
@@ -104,7 +102,7 @@
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>5.6.0</version>
+            <version>5.5.0</version>
             <scope>test</scope>
         </dependency>
 

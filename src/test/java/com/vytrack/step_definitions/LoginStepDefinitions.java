@@ -14,7 +14,7 @@ public class LoginStepDefinitions {
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        String URL = ConfigurationReader.getProperty("qa1");
+        String URL = ConfigurationReader.getProperty("qa3");
         Driver.getDriver().get(URL);
     }
 
@@ -53,6 +53,23 @@ public class LoginStepDefinitions {
     public void user_navigates_to_and(String tab, String module) {
         System.out.printf("User clicks on the %s tab and %s module\n",tab,module);
         loginPage.navigateTo(tab,module);
+    }
+
+    @Then("user name should be {string}")
+    public void user_name_should_be(String userName) {
+        System.out.printf("user name should be %s userName\n",userName);
+       Assert.assertEquals(userName,loginPage.getCurrentUserName());
+    }
+
+    @When("user logs in as {string}")
+    public void user_logs_in_as(String userType) {
+    loginPage.login(userType);
+    }
+
+    @Then("user verifies that title is {string}")
+    public void user_verifies_that_title_is(String pageTitle) {
+        System.out.println("Verify that is: "+pageTitle);
+        Assert.assertEquals(pageTitle,Driver.getDriver().getTitle());
     }
 
 }

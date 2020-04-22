@@ -47,10 +47,11 @@ public class VehiclesPage extends AbstractPageBase {
 
 
     public void clickToCreateCar(){
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+
         BrowserUtilities.wait(2);
         wait.until(ExpectedConditions.elementToBeClickable(createCar)).click();
-        BrowserUtilities.wait(3);
+        BrowserUtilities.wait(2);
+        waitForLoaderMask();
     }
 
     public String getCarGeneralInfo(String parameter) {

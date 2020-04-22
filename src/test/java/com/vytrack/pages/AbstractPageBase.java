@@ -42,6 +42,7 @@ public abstract class AbstractPageBase {
     public void clickOnSaveAndClose() {
         BrowserUtilities.wait(3);
         wait.until(ExpectedConditions.elementToBeClickable(saveAndClose)).click();
+        waitForLoaderMask();
     }
 
 
@@ -69,5 +70,13 @@ public abstract class AbstractPageBase {
 
         //increase this wait rime if still failing
         BrowserUtilities.wait(4);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("(//div[@class=\"loader-mask\"]//div)[1]")));
+        waitForLoaderMask();
+    }
+
+    // this method can be user to wait until that terrible loader mask(spinning circle) will be gone
+    public void waitForLoaderMask(){
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("(//div[@class=\"loader-mask\"]//div)[1]")));
+
     }
 }

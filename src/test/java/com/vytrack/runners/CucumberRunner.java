@@ -29,8 +29,8 @@ import org.junit.runner.RunWith;
         glue = "com/vytrack/step_definitions",
         features = "src/test/resources/features",
         dryRun = false,
-        strict = true,
-        tags = "@create_car",
+        strict = false,
+        tags = "@smoke",
         plugin = {
                 "html:target/default-html-report",
                  "json:target/cucumber1.json"
