@@ -27,13 +27,14 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = "com/vytrack/step_definitions",
-        features = "src/test/resources/features",
+        features = "src/test/resources",
         dryRun = false,
         strict = false,
-        tags = "@smoke",
+        tags = "@smoke_test",
         plugin = {
                 "html:target/default-html-report",
-                 "json:target/cucumber1.json"
+                 "json:target/cucumber1.json",
+                "rerun:target/rerun.txt"
 
         }
 )

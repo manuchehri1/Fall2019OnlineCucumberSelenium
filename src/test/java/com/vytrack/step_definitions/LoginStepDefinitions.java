@@ -14,7 +14,7 @@ public class LoginStepDefinitions {
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        String URL = ConfigurationReader.getProperty("qa3");
+        String URL = ConfigurationReader.getProperty("qa1");
         Driver.getDriver().get(URL);
     }
 
@@ -66,8 +66,9 @@ public class LoginStepDefinitions {
     loginPage.login(userType);
     }
 
-    @Then("user verifies that title is {string}")
-    public void user_verifies_that_title_is(String pageTitle) {
+
+    @Then("user verifies that page title is {string}")
+    public void user_verifies_that_page_title_is(String pageTitle) {
         System.out.println("Verify that is: "+pageTitle);
         Assert.assertEquals(pageTitle,Driver.getDriver().getTitle());
     }

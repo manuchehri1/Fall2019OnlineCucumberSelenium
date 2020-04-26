@@ -1,6 +1,5 @@
 package com.vytrack.runners;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -8,17 +7,15 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         glue = "com/vytrack/step_definitions",
-        features = "src/test/resources/features/activities",
-        dryRun = false,
+        features = "@target/rerun.txt",
         strict = false,
- //       tags = "",
         plugin = {
-                "html:target/default-html-report",
-                "json:target/cucumber2.json"
+                "html:target/failed-default-html-report",
+                "json:target/failed_test_report.json",
+
 
         }
 )
 
-public class ActivitiesTestRunner {
-
+public class FailedTestRunner {
 }
